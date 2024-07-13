@@ -6,4 +6,4 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-An Assessment project for zoho company.
+An Assessment project for Zoho company.
