@@ -47,16 +47,11 @@ class _AppState extends State<App> {
             hoverColor: Colors.transparent,
           ),
           builder: (_, child) {
-            final MediaQueryData data = MediaQuery.of(context);
-            return MediaQuery(
-              data: data.copyWith(
-                  textScaler: TextScaler.linear(data.textScaler.scale(data.textScaleFactor) > 1.0 ? 1.0 : data.textScaler.scale(1.0))),
-              child: GestureDetector(
-                onTap: () {
-                  FocusManager.instance.primaryFocus?.unfocus();
-                },
-                child: child,
-              ),
+            return GestureDetector(
+              onTap: () {
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              child: child,
             );
           },
           onGenerateRoute: routes.onGenerateRoute,
@@ -64,3 +59,4 @@ class _AppState extends State<App> {
     );
   }
 }
+

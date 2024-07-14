@@ -1,3 +1,5 @@
+import 'package:zoho_gatherly/src/features/home_screen/home_screen.dart';
+
 import '../../src/routing/route_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +14,10 @@ class RouteManager {
         return MaterialPageRoute(
             settings: const RouteSettings(name: RouteConstants.splashScreen),
             builder: (context) => const SplashScreen());
+      case RouteConstants.homeScreen:
+        return MaterialPageRoute(
+            settings: const RouteSettings(name: RouteConstants.homeScreen),
+            builder: (context) => const HomeScreen());
       default:
         return MaterialPageRoute(
             settings: const RouteSettings(name: RouteConstants.splashScreen),

@@ -39,7 +39,16 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  fonts:
+    - family: SeymourOne
+      fonts:
+        - asset: assets/fonts/SeymourOne-Regular.ttf
+
+    - family: sfCompactDisplay
+      fonts:
+        - asset: assets/fonts/sf-compact-display-medium.otf
 
   assets:
     - assets/
+    - assets/fonts/
     - assets/json/language/
