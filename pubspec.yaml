@@ -24,10 +24,15 @@ dependencies:
   #Local Storage
   flutter_secure_storage: ^8.0.0
   shared_preferences: ^2.1.0
+  sqflite: ^2.0.3
 
   #Widgets
   image_picker: ^0.8.7+4
   size_setter:
+  flick_video_player: ^0.8.0
+  path_drawing: ^1.0.0
+  carousel_slider: ^4.2.1
+
 
 dev_dependencies:
   flutter_test:
@@ -50,5 +55,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/videos/
+    - assets/images/
     - assets/fonts/
     - assets/json/language/

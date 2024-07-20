@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:zoho_gatherly/src/providers/app_providers.dart';
+import 'package:zoho_gatherly/src/providers/upload_data_provider.dart';
 import 'package:zoho_gatherly/src/services/local_storage/key_value_storage_base.dart';
 import 'dart:async';
 
@@ -15,6 +16,9 @@ Future<void> main() async {
       MultiProvider(providers: [
         ChangeNotifierProvider(
           create: (_) => AppProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => UploadDataProvider(),
         ),
       ], child: const App()),
     );

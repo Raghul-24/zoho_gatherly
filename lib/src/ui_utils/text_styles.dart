@@ -10,6 +10,18 @@ abstract class TextStyles {
     fontSize: 16,
     fontFamily: Fonts.sfCompactDisplay,
   );
+  static const smallText = TextStyle(
+    color: AppColors.textColor,
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+    fontFamily: Fonts.sfCompactDisplay,
+  );
+  static const headerText = TextStyle(
+    color: AppColors.blackColor,
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+    fontFamily: Fonts.sfCompactDisplay,
+  );
   static const mainHeader = TextStyle(
     color: AppColors.blackColor,
     fontWeight: FontWeight.w600,

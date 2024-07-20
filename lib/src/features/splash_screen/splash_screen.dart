@@ -33,61 +33,39 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          color: AppColors.whiteColor,
-          child: Center(child: Text(StringConstants.appName.tr(context),style: TextStyles.splashText,))),
+      body: Stack(
+        children: [
+          Positioned(
+            top: -200,
+            left: -110,
+            child: Container(
+              width: 500,
+              height: 500,
+              decoration: const BoxDecoration(
+                color: AppColors.splashCurve,
+                borderRadius: BorderRadius.only(bottomRight: Radius.circular(280)),
+                shape: BoxShape.rectangle,
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: -200,
+            right: -110,
+            child: Container(
+              width: 500,
+              height: 500,
+              decoration: const BoxDecoration(
+                color: AppColors.splashCurve,
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(280)),
+                shape: BoxShape.rectangle,
+              ),
+            ),
+          ),
+          Center(
+            child:Text(StringConstants.appName.tr(context),style: TextStyles.splashText,)
+          ),
+        ],
+      ),
     );
   }
 }
-
-class CurvePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    var paint = Paint();
-    paint.color = Colors.green[800]!;
-    paint.style = PaintingStyle.fill;
-
-    var path = Path();
-
-    path.moveTo(0, size.height * 0.90);
-    path.quadraticBezierTo(size.width * 0.2, size.height * 0.623,
-        size.width * 1, size.height * 0.60);
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
-
-    canvas.drawPath(path, paint);
-
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
-  }
-}
-
-// class UpsideDownClipper extends CustomClipper<Path> {
-//   @override
-//   Path getClip(Size size) {
-//     final path = Path();
-//     path.lineTo(0, 0);
-//     path.lineTo(0, size.height - 50);
-//
-//     // Create a curve
-//     path.quadraticBezierTo(
-//         size.width / 2,
-//         size.height + 50,
-//         size.width,
-//         size.height - 50
-//     );
-//
-//     path.lineTo(size.width, size.height - 50);
-//     path.lineTo(size.width, 0);
-//     path.close();
-//     return path;
-//   }
-//
-//   @override
-//   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-//     return false;
-//   }
-// }
